@@ -636,7 +636,7 @@ def file_append(file, table_name, *sqls):
     file.write('/' + table_name.center(80, '*') + '/')
     file.write('\n')
     for s in sqls:
-        file.write(s)
+        file.write(str(s))
         file.write('\n')
         file.write('\n')
 
