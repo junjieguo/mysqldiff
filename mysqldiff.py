@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-# @Time    : 2018/11/23 13:59
-# @Author  : zhoukang
+# @Time    : 2021/01/08
+# @Author  : tevintan
 # @File    : mysqldiff.py
 """
 命令格式：python mysqldiff.py -x s=clear:123456@192.168.18.149:3306 db_new:db_old file=diff.sql
@@ -795,7 +795,7 @@ if __name__ == '__main__':
     max_allowed_packet = get_max_allow_packet(db_old)
     if db_new_param.table is not None:
         sql = compare_table_structure(db_new_param.table, db_old_param.table)
-        if not sql:
+        if  sql:
             handle_sql(db_old, db_old_param.table, sql)
         exit()
     transaction = db_old.transaction()
